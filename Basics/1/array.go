@@ -13,13 +13,13 @@ func main() {
 	// ...
 
 	// 2. Declaring an array
-	grades := [3]int{1, 2, 3}
-	fmt.Printf("Prices: %v\n", grades)
+	prices := [3]int{1, 2, 3}
+	fmt.Printf("Prices: %v\n", prices)
 
 	// 3. Contiguous in memory
 
 	// 4. Can skip size if providing initializer list
-	grades = [...]int{1, 2, 3}
+	prices = [...]int{1, 2, 3}
 
 	// 5. Array with zero values
 	var products [3]string
@@ -57,4 +57,13 @@ func main() {
 	fmt.Printf("d: %v\n", d)
 
 	// 12. Arrays have fixed size that has be knows at compile time. Slices can have variable size
+
+	// 13. For range loops to work with arrays
+	for i := 0; i < len(products); i++ {
+		// fmt.Println(i, products[i])
+	}
+
+	for _, v := range products {
+		fmt.Println(v)
+	}
 }
