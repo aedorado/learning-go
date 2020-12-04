@@ -14,19 +14,20 @@ func main() {
 	// what are keys and values?
 	population := map[string]int{}
 
-	empSal := map[string]int{
-		"Nami":    10000,
-		"Lufy":    20000,
-		"Zoro":    5000,
-		"Brook":   45000,
-		"Chooper": 1000,
+	sales := map[string]int{
+		"Jan": 10000,
+		"Feb": 20000,
+		"Mar": 5000,
+		"Apr": 45000,
+		"May": 1000,
 	}
 
 	fmt.Printf("Value = %v, Type = %T\n", population, population)
-	fmt.Printf("Value = %v, Type = %T\n", empSal, empSal)
+	fmt.Printf("Value = %v, Type = %T\n", sales, sales)
 
-	// 2. Map Keys should be able to be tested for equality
-	// Can be: bool, int, float, struct, array, string, pointer, interfaces, channels
+	// 2. Data types of keys in a map
+	// should be able to be tested for equality
+	// Can be: bool, int, float, struct, array, string, pointer, interfaces, channels etc
 	// Cannot be: Slices, Maps, Functions
 
 	// m := map[[]int]string{}
@@ -39,39 +40,39 @@ func main() {
 	fmt.Printf("Value = %v, Type = %T\n", map1, map1)
 
 	// 4. Accesing the values form a map
-	fmt.Printf("Value = %v, Type = %T\n", empSal["Nami"], empSal["Nami"])
+	fmt.Printf("Value = %v, Type = %T\n", sales["Jan"], sales["Jan"])
 
 	// 5. Updating values
-	empSal["Frankie"] = 40000
-	fmt.Printf("Value = %v, Type = %T\n", empSal["Nami"], empSal["Nami"])
-	fmt.Printf("Value = %v, Type = %T\n", empSal, empSal)
+	sales["Frankie"] = 40000
+	fmt.Printf("Value = %v, Type = %T\n", sales["Jan"], sales["Jan"])
+	fmt.Printf("Value = %v, Type = %T\n", sales, sales)
 
 	// 6. deleting keys
-	delete(empSal, "Brook")
-	fmt.Printf("Value = %v, Type = %T\n", empSal, empSal)
+	delete(sales, "Brook")
+	fmt.Printf("Value = %v, Type = %T\n", sales, sales)
 
 	// 7. Accessing keys not present in the map
-	fmt.Printf("Value = %v, Type = %T\n", empSal["Brook"], empSal["Brook"])
-	fmt.Printf("Value = %v, Type = %T\n", empSal["rook"], empSal["rook"])
+	fmt.Printf("Value = %v, Type = %T\n", sales["Jan"], sales["Jan"])
+	fmt.Printf("Value = %v, Type = %T\n", sales["g"], sales["g"])
 
 	// 8. Optional Comma Ok syntax
-	empSalValue, ok := empSal["Nami"]
-	fmt.Printf("%v %v\n", empSalValue, ok)
-	empSalValue, ok = empSal["Mami"]
-	fmt.Printf("%v %v\n", empSalValue, ok)
+	salesValue, ok := sales["Jan"]
+	fmt.Printf("%v %v\n", salesValue, ok)
+	salesValue, ok = sales["Jan"]
+	fmt.Printf("%v %v\n", salesValue, ok)
 
 	// 9. Check only for presence
-	_, ok = empSal["Nami"]
-	fmt.Printf("%v %v\n", empSalValue, ok)
+	_, ok = sales["Jan"]
+	fmt.Printf("%v %v\n", salesValue, ok)
 
 	// 10. length
-	fmt.Printf("Length = %v\n", len(empSal))
+	fmt.Printf("Length = %v\n", len(sales))
 
 	// 11. Maps are passed by reference
-	mapRef := empSal
-	fmt.Printf("Value = %v, Type = %T\n", mapRef, mapRef)
-	delete(mapRef, "Lufy")
-	fmt.Printf("Value = %v, Type = %T\n", mapRef, mapRef)
-	fmt.Printf("Value = %v, Type = %T\n", empSal, empSal)
+	salesRef := sales
+	fmt.Printf("Value = %v, Type = %T\n", salesRef, salesRef)
+	delete(salesRef, "Jan")
+	fmt.Printf("Value = %v, Type = %T\n", salesRef, salesRef)
+	fmt.Printf("Value = %v, Type = %T\n", sales, sales)
 
 }
