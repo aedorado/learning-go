@@ -37,7 +37,7 @@ func main() {
 	fmt.Println(sumret(1, 2, 4))
 
 	// 10. Return the local variable as a pointer
-	// such a value is generated on the head and not on the stack
+	// such a value is generated on the heap and not on the stack
 	fmt.Println(*sumretp(1, 2, 4))
 
 	// 11. Named return values
@@ -62,11 +62,11 @@ func divide(a, b float64) (float64, error) {
 
 func sum(values ...int) {
 	fmt.Printf("Value = %v, Type := %T\n", values, values)
-	sumv := 0
+	total := 0
 	for _, v := range values {
-		sumv += v
+		total += v
 	}
-	fmt.Println(sumv)
+	fmt.Println(total)
 }
 
 func sumret(values ...int) int {
@@ -103,6 +103,11 @@ func passByValue(s string) {
 func passByRef(s *string) {
 	*s = "changed name"
 	fmt.Println(*s)
+}
+
+func passByReference(sf *string) {
+	*sf = "changed in function"
+	fmt.Println("Value in function: ", *sf)
 }
 
 func print(s string) {
