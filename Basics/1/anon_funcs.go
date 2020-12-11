@@ -4,8 +4,26 @@ import (
 	"fmt"
 )
 
+func func1(g func(int) int) {
+	a := g(10)
+
+	fmt.Printf("Type = %T, Value = %v\n", a, a)
+
+}
+
 func main() {
-	fmt.Println("Functions as first class data types in Go")
+
+}
+
+func main() {
+	fmt.Println("Functions as Types & Anonymous Functions")
+
+	var f func(i int) int = func(i int) int {
+		fmt.Println("Hello Go!", i)
+		return 0
+	}
+
+	func1(f)
 
 	func() {
 		fmt.Println("Hello Go!")
