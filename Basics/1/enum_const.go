@@ -58,7 +58,8 @@ func main() {
 	// 2. Using iota in a constant decleration block
 	fmt.Printf("Value = %v, Type = %T\n", b, b)
 	fmt.Printf("Value = %v, Type = %T\n", c, c)
-	fmt.Printf("Value = %v, Type = %T\n\n", d, d)
+	fmt.Printf("Value = %v, Type = %T\n", d, d)
+	fmt.Printf("Value = %v, Type = %T\n\n", e, e)
 
 	// 3. Dont assign value after the first one
 
@@ -71,7 +72,8 @@ func main() {
 	fmt.Printf("Value = %v, Type = %T\n\n", g, g)
 
 	// 5, 6 Usage and default values
-	var vehicle int
+	var vehicle int = bike
+	fmt.Printf("%v\n", vehicle == bike)
 	fmt.Printf("%v\n", vehicle == car)
 	vehicle = bike
 	fmt.Printf("%v\n", vehicle == car)
