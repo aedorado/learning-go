@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	fmt.Println("Panic & Recover")
+	fmt.Println("Panic")
 
 	// 1. There are no exceptions in go
 	// exceptional situations are considered normal
