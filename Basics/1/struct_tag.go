@@ -23,7 +23,7 @@ type T struct {
 func main() {
 	a := Animal{Color: "white"}
 
-	// 4. Gettinh tag values using reflect package
+	// 4. Getting tag values using reflect package
 	typ := reflect.TypeOf(a)
 	field, _ := typ.FieldByName("Name")
 	fmt.Printf("Type = %T, Value = %+v\n", field.Tag, field.Tag)
@@ -36,6 +36,6 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Printf("%s\n", b) // {"f_1":1,"f_3":2}
+	fmt.Printf("%s\n", b)
 
 }
